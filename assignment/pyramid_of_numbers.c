@@ -36,7 +36,7 @@ struct BigInt {
 *** @param *big_int The converted string now as BigInt.
 * @return The number of characters converted.
 */
-int strtobig_int(const char *str, int len, struct BigInt *big_int);
+int strtobig_int(int len, struct BigInt *big_int);
 
 /** print_big_int() prints a BigInt.
 *** @param *big_int The BigInt to be printed.
@@ -76,5 +76,25 @@ void copy_big_int(const struct BigInt *from, struct BigInt *to);
 */
 int main(int argc, char *argv[])
 {
+	printf("test1");
+	struct BigInt big_int = {0, {0}};
+	printf("test2");
+	//char a_string[3] = {'1','2','3'};
+	printf("test");
+	int count = strtobig_int(3, &big_int);
+	printf("%d %d\n",count, big_int.the_int[1]);
 	return 0;
+}
+
+int strtobig_int(int len, struct BigInt *big_int)
+{
+	int i = 0;
+	printf("1");
+	//while((i < len) && (str[i] >= '0') && (str[i] <= '9'))
+	//{
+		//big_int->the_int[i] = str[i];
+		//big_int->digits_count++;
+	//}
+
+	return big_int->digits_count;
 }
